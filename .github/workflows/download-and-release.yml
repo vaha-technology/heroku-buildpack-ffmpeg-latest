@@ -19,6 +19,6 @@ jobs:
     - uses: ncipollo/release-action@v1
       with:
         artifacts: "bin/ffmpeg.tar.xz"
-        commit: "main"
-        tag: "latest master static build"
+        commit: "master"
+        tag: "latest-static-git-release"
         token: ${{ secrets.GITHUB_TOKEN }}
