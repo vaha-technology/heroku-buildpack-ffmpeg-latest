@@ -10,9 +10,12 @@ Unlike other build packs, I never compile anything.
 Run the following from the heroku command line:
 
 ```
-heroku buildpacks:add --index 1 https://github.com/vaha-technology/heroku-buildpack-ffmpeg-latest.git
+heroku buildpacks:add --index 1 https://github.com/vaha-technology/heroku-buildpack-ffmpeg-latest.git --app HEROKU_APP
 ```
 
+```
+Set HEROKU_APP to either vaha-api-production or vaha-api-staging
+```
 You can set a custom download URL by setting the variable `FFMPEG_DOWNLOAD_URL`.
 
 Note: This buildpack should be added before the main language buildpack (by using `--index 1`),
