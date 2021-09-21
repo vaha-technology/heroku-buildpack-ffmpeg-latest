@@ -1,0 +1,23 @@
+name: Download and Release
+
+on: 
+  schedule:
+    - cron:  '0 0 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Download static binaries
+      run: ./bin/download.sh
+      env:
+        FFMPEG_DOWNLOAD_URL: "https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz"
+        FFMPEG_ARCHIVE_NAME: "ffmpeg.tar.xz"
+      shell: bash
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "bin/ffmpeg.tar.xz"
+        commit: "main"
+        tag: "latest master static build"
+        token: ${{ secrets.GITHUB_TOKEN }}
