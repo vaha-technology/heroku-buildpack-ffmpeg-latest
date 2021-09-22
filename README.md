@@ -14,7 +14,7 @@ heroku buildpacks:add --index 1 https://github.com/vaha-technology/heroku-buildp
 ```
 
 ```
-Set HEROKU_APP to either vaha-api-production or vaha-api-staging
+Set HEROKU_APP to the heroku app you want to refer to
 ```
 You can set a custom download URL by setting the variable `FFMPEG_DOWNLOAD_URL`.
 
