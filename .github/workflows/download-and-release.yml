@@ -18,6 +18,7 @@ jobs:
       shell: bash
     - uses: ncipollo/release-action@v1
       with:
+        allowUpdates: true
         artifacts: "bin/ffmpeg.tar.xz"
         commit: "master"
         tag: "latest-static-git-release"
